@@ -29,6 +29,7 @@ public class deformMesh : MonoBehaviour
             if (dist < Radius)
             {
                 verts[i] -= Vector3.up * Power;
+
             }
         }
         mesh.vertices = verts;

@@ -7,7 +7,8 @@ public class raycast : MonoBehaviour
 {
     Ray ray;
     RaycastHit hit;
-    
+    [SerializeField]
+    GameObject capsule;
     void Update()
     {
         if (Input.GetMouseButton(0))
@@ -24,6 +25,7 @@ public class raycast : MonoBehaviour
         {
            deformMesh deformmesh= hit.transform.GetComponent<deformMesh>();
             deformmesh.deformmesh(hit.point);
+            Instantiate(capsule, new Vector3(hit.point.x,hit.point.y, hit.point.z- 0.123f), Quaternion.Euler(-90, 0, 0));
         }
     }
 }
